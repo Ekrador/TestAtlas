@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Рассчет займа";
+}
+    <div class="text-center row justify-content-center align-items-center">
+        <div class="col-auto">
+        <form method="get" asp-controller="Calculator" asp-action="Monthly">
+                <input class="btn btn-dark mr-3" type="submit" value="Займ на несколько месяцев" />
+        </form>
+        </div>
+        <div class="col-auto">
+        <form method="get" asp-controller="Calculator" asp-action="Daily">
+                <input class="btn btn-dark mr-3" type="submit" value="Займ на несколько дней" />
+        </form>
+        </div>
+    </div>

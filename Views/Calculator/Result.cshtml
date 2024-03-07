@@ -1,0 +1,45 @@
+﻿@model TestAtlas.ViewModels.ResultViewModel
+
+@{
+    ViewData["Title"] = "График платежей";
+}
+
+<div class="col-md-8"">
+    <table class="table table-borderless table-hover">
+        <thead>
+            <tr class="lined-row">
+                <th>
+                    №
+                </th>
+                <th>
+                    Дата платежа
+                </th>
+                <th>
+                    Сумма платежа
+                </th>
+                <th>
+                    Основной долг
+                </th>
+                <th>
+                    Проценты
+                </th>
+                <th>
+                    Остаток долга
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var data in Model.Payments)
+            {
+                <tr>
+                    <td>@data.Id</td>
+                    <td>@data.Date</td>
+                    <td>@data.PaymentAmount.ToString("0.00")</td>
+                    <td>@data.Debt.ToString("0.00")</td>
+                    <td>@data.Percents.ToString("0.00")</td>
+                    <td>@data.Rest.ToString("0.00")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,39 @@
+﻿@model TestAtlas.ViewModels.DailyCalculatorViewModel
+
+@{
+    ViewData["Title"] = "Калькулятор займов";
+}
+
+<h3 class="center">Рассчет займа</h3>
+<form class="form-calc" method="post" asp-controller="Calculator" asp-action="CalculateDaily">
+    <div asp-validation-summary="ModelOnly"></div>
+    <div>
+        <label asp-for="Amount"></label>
+        <input asp-for="Amount" class="form-control" />
+        <span asp-validation-for="Amount" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Term"></label>
+        <input asp-for="Term" class="form-control" />
+        <span asp-validation-for="Term" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Rate"></label>
+        <input asp-for="Rate" class="form-control" />
+        <span asp-validation-for="Rate" class="text-danger"></span>
+    </div>
+    <div>
+    <label asp-for="Step"></label>
+    <input asp-for="Step" class="form-control" />
+    <span asp-validation-for="Step" class="text-danger"></span>
+    </div>
+    <div class="frm-btn">
+        <input class="btn btn-dark mr-3" type="submit" value="Рассчитать" />
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
